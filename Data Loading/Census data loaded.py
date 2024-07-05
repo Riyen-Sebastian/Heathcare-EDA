@@ -5,11 +5,11 @@ import pandas as pd
 df1 = pd.read_csv('Healthcare Data/census_2011.csv')
 
 # Display basic information about the dataframe
-print("Data1 Info:")
+print("Data Info:")
 print(df1.info())
 
 # Display the first few rows
-print("\nFirst few rows of Data1:")
+print("\nFirst few rows of Data:")
 print(df1.head())
 
-print("Data1 has been loaded successfully")
+print("Data has been loaded successfully")
