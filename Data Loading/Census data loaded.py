@@ -1,7 +1,8 @@
+# Done by -- riyen 
 import pandas as pd
 
 # Load the CSV file
-df1 = pd.read_csv('C:/Users/Riyen/Healthcare EDA project/Heathcare-EDA/Healthcare Data/census_2011.csv')
+df1 = pd.read_csv('Healthcare Data/census_2011.csv')
 
 # Display basic information about the dataframe
 print("Data1 Info:")
