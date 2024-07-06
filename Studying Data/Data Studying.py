@@ -15,7 +15,7 @@ csv_files = [
     'Healthcare Data/Telangana.txt',
     'Healthcare Data/north_east_states.txt']
 
-#Function to sttudy dataframe
+#Function to study dataframe
 def study_dataframe(df,name):
     print(f"\n--- Studying {name} ---")
        #insert data studying functions here
@@ -61,7 +61,30 @@ def study_dataframe(df,name):
         plt.savefig(f'{name}boxplot{column}.png')
         plt.close()
 
+  # For categorical columns, show value counts
+    categorical_columns = df.select_dtypes(include=['object']).columns
+    for column in categorical_columns:
+        print(f"\nValue counts for {column}:")
+        value_counts = df[column].value_counts(normalize=True)
+        print(value_counts.head(10))  # Print top 10 categories
         
+        # Bar plot for top categories
+        plt.figure(figsize=(10, 6))
+        value_counts.head(10).plot(kind='bar')
+        plt.title(f'Top 10 Categories in {column}')
+        plt.savefig(f'{name}top_categories{column}.png')
+        plt.close()
+
+    # Identify potential outliers in numeric columns
+    if not numeric_columns.empty:
+        print("\nPotential Outliers (values beyond 3 standard deviations):")
+        for column in numeric_columns:
+            mean = df[column].mean()
+            std = df[column].std()
+            outliers = df[(df[column] < mean - 3*std) | (df[column] > mean + 3*std)]
+            if not outliers.empty:
+                print(f"\n{column}:")
+                print(outliers[column].head())  # Print first few outliers      
 
 
     
