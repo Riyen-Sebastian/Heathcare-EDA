@@ -45,6 +45,24 @@ def study_dataframe(df,name):
     print("\nUnique Values in Each Column:")
     for column in df.columns:
         print(f"{column}: {df[column].nunique()} unique values")
+    # Correlation heatmap for numeric columns
+    if len(numeric_columns) > 1:
+        plt.figure(figsize=(12, 10))
+        sns.heatmap(df[numeric_columns].corr(), annot=True, cmap='coolwarm')
+        plt.title(f'Correlation Heatmap - {name}')
+        plt.savefig(f'{name}_correlation_heatmap.png')
+        plt.close()
+
+    # Boxplots for numeric columns to identify outliers
+    for column in numeric_columns:
+        plt.figure(figsize=(10, 6))
+        sns.boxplot(x=df[column])
+        plt.title(f'Boxplot of {column}')
+        plt.savefig(f'{name}boxplot{column}.png')
+        plt.close()
+
+        
+
 
     
 
@@ -52,3 +70,4 @@ def study_dataframe(df,name):
 for file in csv_files:
     df=pd.read_csv(file)
     study_dataframe(df,file.split('/')[-1])
+
