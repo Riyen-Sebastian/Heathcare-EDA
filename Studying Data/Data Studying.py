@@ -37,7 +37,15 @@ def study_dataframe(df,name):
     print("\nPercentage of Missing Values:")
     print(100 * missing_values / len(df))
     
-   
+   #Data types
+    print("\nData Types:")
+    print(df.dtypes)
+
+    #Unique values in each column
+    print("\nUnique Values in Each Column:")
+    for column in df.columns:
+        print(f"{column}: {df[column].nunique()} unique values")
+
     
 
 #To study each data frame
