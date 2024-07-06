@@ -18,9 +18,26 @@ csv_files = [
 #Function to sttudy dataframe
 def study_dataframe(df,name):
     print(f"\n--- Studying {name} ---")
-    
-    #insert data studying functions here
+       #insert data studying functions here
 
+      # Basic information
+    print("\nBasic Info:")
+    print(df.info())
+    
+    # Summary statistics for numeric columns
+    numeric_columns = df.select_dtypes(include=['int64', 'float64']).columns
+    if not numeric_columns.empty:
+        print("\nSummary Statistics for Numeric Columns:")
+        print(df[numeric_columns].describe())
+    
+    # Missing values
+    print("\nMissing Values:")
+    missing_values = df.isnull().sum()
+    print(missing_values)
+    print("\nPercentage of Missing Values:")
+    print(100 * missing_values / len(df))
+    
+   
     
 
 #To study each data frame
