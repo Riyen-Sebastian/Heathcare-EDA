@@ -109,7 +109,7 @@ c108,Waste water outlet connected to: No drainage
 c109,Type of Fuel used for Cooking: Fire-wood
 c110,Type of Fuel used for Cooking: Crop residue
 c111,Type of Fuel used for Cooking: Cowdung cake
-c112,Type of Fuel used for Cooking: Coal,Lignite,Charcoal
+c112,Type of Fuel used for Cooking: Coal/Lignite/Charcoal
 c113,Type of Fuel used for Cooking: Kerosene
 c114,Type of Fuel used for Cooking: LPG/PNG
 c115,Type of Fuel used for Cooking: Electricity
@@ -135,7 +135,7 @@ c134,Availability of assets: Telephone/Mobile Phone (Both)
 c135,Availability of assets: Bicycle
 c136,Availability of assets: Scooter/Motorcycle/Moped
 c137,Availability of assets: Car/Jeep/Van
-c138,Availability of assets: Households with TV, Computer/Laptop, Telephone/mobile phone and Scooter/Car
+c138,Availability of assets: Households with TV/ Computer/Laptop/ Telephone/mobile phone and Scooter/Car
 c139,Availability of assets: None of the assets specified in col. 10 to 19
 c140,Households by Type of Structure of Census Houses: Permanent
 c141,Households by Type of Structure of Census Houses: Semi-Permanent
