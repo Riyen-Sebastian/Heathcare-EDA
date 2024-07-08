@@ -1,0 +1,15 @@
+def smart_impute(file_path):
+    # Read the CSV file
+    df = pd.read_csv(file_path)
+    
+    
+    
+    # Function to determine if a column is datetime
+    def is_datetime(col):
+        return pd.api.types.is_datetime64_any_dtype(df[col])
+    
+    for column in df.columns:
+        
+          if is_datetime(column):
+                # For datetime columns, forward fill and then backward fill
+                df[column] = df[column].fillna(method='ffill').fillna(method='bfill')
