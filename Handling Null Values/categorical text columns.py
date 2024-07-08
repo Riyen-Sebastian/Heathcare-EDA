@@ -32,31 +32,3 @@ def smart_impute(file_path):
     print(f"Updated original file: {file_path}")
     
     return df
-    
-
-    
-    # Save the processed DataFrame back to the original file
-    df.to_csv(file_path, index=False)
-    print(f"Updated original file: {file_path}")
-    
-    return df
-
-# List of CSV files to process
-csv_files = [
-    'Healthcare Data/census_2011.csv',
-    'Healthcare Data/Hospitals and Beds maintained by Railways.csv',
-    'Healthcare Data/government_hospitals.csv',
-    'Healthcare Data/housing-colnames.csv',
-    'Healthcare Data/Employees State Insurance Corporation.csv',
-    'Healthcare Data/Hospitals and Beds maintained by Ministry of Defence.csv',
-    'Healthcare Data/hospitals.csv',
-    'Healthcare Data/housing.csv',
-    'Healthcare Data/metadata.csv',
-    'Healthcare Data/Telangana.txt',
-    'Healthcare Data/north_east_states.txt'
-]
-
-# Process each CSV file
-for file_name in csv_files:
-    processed_df = smart_impute(file_name)
-    print(f"Processed {file_name}")
