@@ -23,7 +23,7 @@ def handle_outliers(file_path):
             z_scores = np.abs(stats.zscore(df[column]))
             df[column] = df[column].mask(z_scores > 3, df[column].median())
             print(f"Used Z-score method for {column}")
-        print(df)
+        
     
     df.to_csv(file_path, index=False)
     print(f"Handled outliers in {file_path}")
