@@ -143,7 +143,7 @@ def perform_eda(file_paths):
 
 # List of CSV files
 csv_files = [
-    'Healthcare Data/census_2011.csv'
+    'Healthcare Data/Employees State Insurance Corporation.csv'
     # Add all your CSV files here
 ]
 
