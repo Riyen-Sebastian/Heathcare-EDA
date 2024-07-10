@@ -1,0 +1,8 @@
+def plot_correlation_heatmap(df, prefix="correlation_heatmap"):
+    os.makedirs("plots", exist_ok=True)
+    plt.figure(figsize=(12, 10))
+    corr_matrix = df.corr()
+    sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', fmt=".2f")
+    plt.title(f'{prefix.replace("_", " ").title()}')
+    plt.savefig(f'plots/{prefix}.png')
+    plt.close()
