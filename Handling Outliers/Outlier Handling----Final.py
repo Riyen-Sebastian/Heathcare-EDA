@@ -34,14 +34,12 @@ csv_files = [
     'Healthcare Data/census_2011.csv',
     'Healthcare Data/Hospitals and Beds maintained by Railways.csv',
     'Healthcare Data/government_hospitals.csv',
-    'Healthcare Data/housing-colnames.csv',
     'Healthcare Data/Employees State Insurance Corporation.csv',
     'Healthcare Data/Hospitals and Beds maintained by Ministry of Defence.csv',
     'Healthcare Data/hospitals.csv',
     'Healthcare Data/housing.csv',
-    'Healthcare Data/metadata.csv',
-    'Healthcare Data/Telangana.txt',
-    'Healthcare Data/north_east_states.txt']
+    'Healthcare Data/metadata.csv'
+    ]
 
 # Process each CSV file
 for file_name in csv_files:
