@@ -1,0 +1,22 @@
+def combined_analysis(df, columns, plot_func, batch_size=10, prefix="analysis"):
+    os.makedirs("plots", exist_ok=True)
+    for i in range(0, len(columns), batch_size):
+        batch_columns = columns[i:i+batch_size]
+        num_columns = len(batch_columns)
+        num_rows = (num_columns + 2) // 3  # 3 columns per row
+        fig, axes = plt.subplots(num_rows, 3, figsize=(20, 5 * num_rows))
+        axes = axes.flatten()
+        
+        for j, column in enumerate(batch_columns):
+            if plot_func == plot_univariate:
+                plot_func(df, column, axes[j])
+            else:
+                for k in range(j+1, len(batch_columns)):
+                    plot_func(df, batch_columns[j], batch_columns[k], axes[j])
+        
+        for j in range(len(batch_columns), len(axes)):
+            fig.delaxes(axes[j])
+        
+        plt.tight_layout()
+        plt.savefig(f'plots/{prefix}_batch{i//batch_size + 1}.png')
+        plt.close()
