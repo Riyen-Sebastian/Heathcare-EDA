@@ -1,0 +1,5 @@
+def plot_univariate(df, column, ax):
+    sns.histplot(df[column], kde=True, ax=ax)
+    ax.set_title(column)
+    ax.set_xlabel(column)
+    ax.set_ylabel('Frequency')
