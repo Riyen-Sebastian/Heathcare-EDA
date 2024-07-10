@@ -9,8 +9,7 @@ csv_files = [
     'Healthcare Data/Employees State Insurance Corporation.csv',
     'Healthcare Data/Hospitals and Beds maintained by Ministry of Defence.csv',
     'Healthcare Data/hospitals.csv',
-    'Healthcare Data/housing.csv',
-    'Healthcare Data/metadata.csv'
+    'Healthcare Data/housing.csv'
     ]
 
 #Function to study dataframe
