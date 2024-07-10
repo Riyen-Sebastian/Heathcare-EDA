@@ -1,0 +1,15 @@
+def reduce_dimensions_with_pca(df, n_components=10):
+    scaler = StandardScaler()
+    numeric_df = df.select_dtypes(include=[np.number])
+    scaled_data = scaler.fit_transform(numeric_df)
+    pca = PCA(n_components=n_components)
+    principal_components = pca.fit_transform(scaled_data)
+    pca_df = pd.DataFrame(data=principal_components, columns=[f'PC{i+1}' for i in range(n_components)])
+    explained_variance = pca.explained_variance_ratio_
+    
+    loadings = pd.DataFrame(pca.components_.T, columns=[f'PC{i+1}' for i in range(n_components)], index=numeric_df.columns)
+    
+    top_features_dict = {f'PC{i+1}': ', '.join(loadings[f'PC{i+1}'].abs().sort_values(ascending=False).head(3).index.tolist()) for i in range(n_components)}
+    
+    print(f"Explained variance ratio by PCA: {explained_variance}")
+    return pd.concat([df.reset_index(drop=True), pca_df], axis=1), loadings, top_features_dict, explained_variance
