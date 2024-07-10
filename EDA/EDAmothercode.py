@@ -59,7 +59,7 @@ def combined_analysis(df, columns, plot_func, batch_size=10, prefix="analysis"):
         plt.savefig(f'plots/{prefix}_batch{i//batch_size + 1}.png')
         plt.close()
 
-def reduce_dimensions_with_pca(df, n_components=10):
+def reduce_dimensions_with_pca(df, n_components=3):
     scaler = StandardScaler()
     numeric_df = df.select_dtypes(include=[np.number])
     scaled_data = scaler.fit_transform(numeric_df)
