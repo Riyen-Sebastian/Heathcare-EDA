@@ -59,7 +59,7 @@ def combined_analysis(df, columns, plot_func, batch_size=10, prefix="analysis"):
         plt.savefig(f'plots/{prefix}_batch{i//batch_size + 1}.png')
         plt.close()
 
-def reduce_dimensions_with_pca(df, n_components=10):
+def reduce_dimensions_with_pca(df, n_components=2):
     scaler = StandardScaler()
     numeric_df = df.select_dtypes(include=[np.number])
     scaled_data = scaler.fit_transform(numeric_df)
@@ -143,7 +143,7 @@ def perform_eda(file_paths):
 
 # List of CSV files
 csv_files = [
-    'Healthcare Data/census_2011.csv'
+    'Healthcare Data/Hospitals and Beds maintained by Railways.csv'
     # Add all your CSV files here
 ]
 
