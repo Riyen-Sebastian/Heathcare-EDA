@@ -1,1 +1,1 @@
-
+This folder contains the EDA reports compiled for each of tables in the dataset.
