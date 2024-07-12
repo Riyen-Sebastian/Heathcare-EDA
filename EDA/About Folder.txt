@@ -1,0 +1,2 @@
+This folder contains all scripts related to the EDA analysis
+the final code is in the "EDAmothercode.py" file
